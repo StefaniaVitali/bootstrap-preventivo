@@ -36,27 +36,27 @@
       <section class="preventivo">
         <div class="container">       
         <div class="row">
-          <div class="col-lg-8 border">
+          <div class="col-lg-8">
             <h1>Richiesta Preventivo</h1>
             <p>Compila il form per richiedere un preventivo per i nostri servizi di sviluppo.</p>
             <!-- INIZIO FORM -->
-            <form action="#" method="get"> 
+            <form action="#" method="post"> 
               <div class="mb3">
                 <label for="nome" class="form-label">Nome</label> 
-                <input class="form-control form-control-lg" name="nome" id="nome" type="text" placeholder="Nome" aria-label="preventivo-nome" required> 
+                <input class="form-control form-control-lg" name="nome" id="nome" type="text" placeholder="" aria-label="preventivo-nome" required> 
               </div>
               <div class="mb-3">
                 <label for="cognome" class="form-label">Cognome</label> 
-                <input class="form-control form-control-lg" name="cognome" id="cognome" type="text" placeholder="Cognome" aria-label="preventivo-cognome" required> 
+                <input class="form-control form-control-lg" name="cognome" id="cognome" type="text" placeholder="" aria-label="preventivo-cognome" required> 
               </div>
               <div class="mb-3">
                 <label for="email" class="form-label">Email</label> 
-                <input class="form-control form-control-lg mb-3" name="email" id="email" type="email" placeholder="Mario.Rossi@lamiaemail.it" aria-label="preventivo-email" required>   
+                <input class="form-control form-control-lg mb-3" name="email" id="email" type="email" placeholder="" aria-label="preventivo-email" required>   
               </div>
               <div class="mb-3">   
                 <label for="email" class="form-label">Tipo di lavoro</label>              
                 <select class="form-select form-select-lg mb-3" aria-label="selezione-lavoro" name="lavoro" id="lavoro" required>
-                  <option selected>Seleziona il tipo di lavoro</option>
+                  <option selected value="">Seleziona il tipo di lavoro</option>
                   <option value="1">Backed Development</option>
                   <option value="2">Fronted Development</option>
                   <option value="3">Project Analysis</option>
@@ -64,12 +64,12 @@
               </div>
               <div class="mb-3">
                 <label for="messaggio-preventivo" class="form-label">Textarea con Bootstrap 5</label> 
-                <textarea class="form-control" id="messaggio-preventivo" rows="3" name="messaggio-preventivo">            
+                <textarea class="form-control" id="messaggio-preventivo" rows="3" name="messaggio-preventivo">Scrivi qui per cosa richiedi il preventivo
                 </textarea>
               </div> 
               <div class="mb3">
                 <label for="promo-code" class="form-label">Codice promozionale (opzionale)</label> 
-                <input class="form-control form-control-lg" name="promo-code" id="promo-code" type="text" placeholder="" aria-label="preventivo-nome" required> 
+                <input class="form-control form-control-lg" name="promo-code" id="promo-code" type="text" placeholder="" aria-label="preventivo-nome"> 
               </div>
               <div class="form-check py-3">
                 <input class="privacy-policy" type="checkbox" value="" id="privacy-policy" name="privacy-policy">
@@ -77,25 +77,50 @@
                   Accetto la Privacy Policy
                 </label>
               </div>
-              <div class="row mb-5 justify-content-evenly py-5">
+              <div class="row mb-5 justify-content-evenly pt-5">
                 <div class="col-auto">                  
                   <button class="btn btn-lg btn-primary" type="submit">Calcola preventivo</button>
                 </div>
-                <div class="col-auto">
-                  <h4 >Prezzo finale</h4>
-                  <p class="text-center">-</p>
+                <div class="col-md-auto mt-3 mt-md-0">
+                  <h4 class="text-center fw-bold">Prezzo finale</h4>
+                  <p class="text-center pb-0">-</p>
                 </div>
               </div>            
            </form>
              <!-- FINE FORM -->
           </div>
-          <div class="col-lg-4 border">Card contatti</div>
+          <div class="col-lg-4 mx-auto mb-5">
+             <!-- CARD CONTATTI -->
+            <div class="card mx-auto px-0" style="width: 20rem;">
+              <img src="./img/ufficio-sede.jpg" class="card-img-top" alt="ufficio-sede-bool-factory" width="300" height="200">
+              <div class="card-body">
+                <h5 class="card-title">I nostri contatti</h5>
+                <p class="card-text">Se hai bisogno di aiuto puoi contattarci</p>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item pb-0">
+                  <address>
+                    <a href="mailto:help@boolfactory.test" class=" link-body-emphasis link-underline link-underline-opacity-0">help@boolfactory.test</a>
+                    </address>
+                </li>
+                <li class="list-group-item pb-0">
+                  <address>
+                    <a href="tel:+1122334455" class="link-body-emphasis link-underline link-underline-opacity-0">+1122334455</a>
+                    </address>
+                </li>
+                <li class="list-group-item">
+                  <a href="#" class="card-link">Help Desk</a>
+                </li>
+              </ul>
+            </div>
+            <!-- CARD CONTATTI -->
+          </div>
         </div>
       </div>
      </section>
     </main>
-    <footer class="bg-dark text-white text-center">
-      <p class="pb-5 pt-4">&copy; 2024 - Tutti i diritti riservati</p>
+    <footer class="bg-dark text-white text-center mb-0">
+      <p class="pb-5 pt-4 mb-0">&copy; 2024 - Tutti i diritti riservati</p>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="./js/app.js"></script>
