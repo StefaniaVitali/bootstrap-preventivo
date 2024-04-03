@@ -5,6 +5,7 @@ const formElement = document.getElementById('form-preventivo')
 const lavoro = document.getElementById('lavoro');
 const buttonElement = document.getElementById('submit');
 const promoElement = document.getElementById('promo-code');
+const paragraphElement = document.getElementById('prezzo-finale-text')
 
 const coupon = ['YHDNU32', 'JANJC63', 'PWKCN25', 'SJDPO96', 'POCIE24'];
 
@@ -42,13 +43,20 @@ formElement.addEventListener('submit', function(event){
 
     const prezzoFinale = prezzoBase - sconto
     console.log(prezzoFinale, sconto)
+   
+    let boldPrice = prezzoFinale.toFixed(2).split('');
+    console.log(boldPrice);
+    let nonBoldPrice = boldPrice.splice(-3).join('');
+    console.log(nonBoldPrice)
+    console.log(boldPrice)  
+    
+    paragraphElement.innerHTML = `<span class="h4 fw-bold">${boldPrice.join('')}</span>${nonBoldPrice}euro`
+     
 
-
-
-
-    //fine formElement
+  //fine formElemento
 });
 
+//proviamo a dividere il risultato
 
 
-//--calcolare lo sconto
+
