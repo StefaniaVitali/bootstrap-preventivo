@@ -42,15 +42,15 @@ formElement.addEventListener('submit', function(event){
     } 
 
     const prezzoFinale = prezzoBase - sconto
-    console.log(prezzoFinale, sconto)
-   
+    console.log(prezzoFinale, sconto)   
     let boldPrice = prezzoFinale.toFixed(2).split('');
     console.log(boldPrice);
-    let nonBoldPrice = boldPrice.splice(-3).join('');
-    console.log(nonBoldPrice)
+    let nonBoldPrice = boldPrice.splice(-3);
+    let pointDecimal = nonBoldPrice.splice(0,1,",")
+    console.log(pointDecimal, nonBoldPrice)
     console.log(boldPrice)  
     
-    paragraphElement.innerHTML = `<span class="h4 fw-bold">${boldPrice.join('')}</span>${nonBoldPrice}euro`
+    paragraphElement.innerHTML = `<span class="h3 fw-bolder"> &euro; ${boldPrice.join('')}</span><span class="h4 fw-light">${nonBoldPrice.join('')}</span>`
      
 
   //fine formElemento
