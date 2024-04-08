@@ -42,14 +42,26 @@ formElement.addEventListener('submit', function(event){
     if(coupon.includes(promoElement.value)){
       sconto = prezzoBase * 0.25
       promoElement.classList.add('is-valid')
+      promoElement.classList.remove('is-invalid')
+      document.getElementById('promo-validation').innerHTML = `Complimenti, hai diritto allo sconto del 25%`
+      document.getElementById('promo-validation').classList.remove('invalid-feedback')
+      document.getElementById('promo-validation').classList.add('valid-feedback')
     } else if (promoElement.value === ""){
       sconto = 0
+      promoElement.classList.remove('is-valid', 'is-invalid')
+      document.getElementById('promo-validation').innerHTML = ""
+      document.getElementById('promo-validation').classList.remove('valid-feedback', 'invalid-feedback')
+
     } else{
-      // promoElement.classList.add('is-invalid');
-      // document.getElementById('promo-validation').classList.add('invalid-feedback')
-      // document.getElementById('promo-validation').innerHTML = `Il codice inserito non è valido`
-      alert('il codice che hai inserito non è valido')
+      promoElement.classList.remove('is-valid')
+      promoElement.classList.add('is-invalid')
+      document.getElementById('promo-validation').innerHTML = `Il codice inserito non è valido`
+      document.getElementById('promo-validation').classList.add('invalid-feedback')
+      
     }
+
+
+   
 
     const prezzoFinale = prezzoBase - sconto
     console.log(prezzoFinale, sconto)  
@@ -63,12 +75,6 @@ formElement.addEventListener('submit', function(event){
     console.log(boldPrice)  
     
     paragraphElement.innerHTML = `<span class="h3 fw-bolder"> &euro; ${boldPrice.join('')}</span><span class="h4 fw-light">${nonBoldPrice.join('')}</span>`
-     
-    lavoro.value=""
-    nameField.value =""
-    surnameField.value=""
-    emailField.value =""
-    promoElement.value = ""
 });
 
 
