@@ -54,13 +54,14 @@
                 <input class="form-control form-control-lg mb-3" name="email" id="email" type="email" placeholder="" aria-label="preventivo-email" required>   
               </div>
               <div class="mb-3">   
-                <label for="email" class="form-label">Tipo di lavoro</label>              
+                <label for="email" class="form-label">Tipo di lavoro*</label>              
                 <select class="form-select form-select-lg mb-3" aria-label="selezione-lavoro" name="lavoro" id="lavoro">
                   <option selected value="0">Seleziona il tipo di lavoro</option>
                   <option value="1">Backed Development</option>
                   <option value="2">Fronted Development</option>
                   <option value="3">Project Analysis</option>
-                </select>      
+                </select>
+                <p id="select-validation" class=""></p>      
               </div>
               <div class="mb-3">
                 <label for="messaggio-preventivo" class="form-label">Scrivi qui per cosa richiedi il preventivo</label> 
@@ -70,8 +71,8 @@
               <div class="mb3">
                 <label for="promo-code" class="form-label">Codice promozionale (opzionale)</label> 
                 <input class="form-control form-control-lg" name="promo-code" id="promo-code" type="text" placeholder="" aria-label="preventivo-nome"> 
-                <p id="promo-validation" class=""></div>
-                </p>
+                <p id="promo-validation" class=""></p>
+                </div>               
               <div class="form-check py-3">
                 <input class="privacy-policy" type="checkbox" value="" id="privacy-policy" name="privacy-policy" required>
                 <label class="form-label" for="privacy-policy">
