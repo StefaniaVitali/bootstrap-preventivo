@@ -5,11 +5,13 @@ const formElement = document.getElementById('form-preventivo')
 const lavoro = document.getElementById('lavoro');
 const buttonElement = document.getElementById('submit');
 const promoElement = document.getElementById('promo-code');
-const paragraphElement = document.getElementById('prezzo-finale-text')
+const paragraphElement = document.getElementById('prezzo-finale-text');
+const nameField = document.getElementById('nome');
+const surnameField = document.getElementById('cognome');
+const emailField = document.getElementById('email');
 
 const coupon = ['YHDNU32', 'JANJC63', 'PWKCN25', 'SJDPO96', 'POCIE24'];
 
-console.log(formElement,lavoro)
 //Collegare il form con l'evento submit evitando che la pagina si ricarchi
 formElement.addEventListener('submit', function(event){
     event.preventDefault();
@@ -39,10 +41,20 @@ formElement.addEventListener('submit', function(event){
     //---costante sconto 25% 
     if(coupon.includes(promoElement.value)){
       sconto = prezzoBase * 0.25
-    } 
+      promoElement.classList.add('is-valid')
+    } else if (promoElement.value === ""){
+      sconto = 0
+    } else{
+      // promoElement.classList.add('is-invalid');
+      // document.getElementById('promo-validation').classList.add('invalid-feedback')
+      // document.getElementById('promo-validation').innerHTML = `Il codice inserito non è valido`
+      alert('il codice che hai inserito non è valido')
+    }
 
     const prezzoFinale = prezzoBase - sconto
-    console.log(prezzoFinale, sconto)   
+    console.log(prezzoFinale, sconto)  
+    
+    //--stampare il prezzo in forma umana
     let boldPrice = prezzoFinale.toFixed(2).split('');
     console.log(boldPrice);
     let nonBoldPrice = boldPrice.splice(-3);
@@ -52,9 +64,13 @@ formElement.addEventListener('submit', function(event){
     
     paragraphElement.innerHTML = `<span class="h3 fw-bolder"> &euro; ${boldPrice.join('')}</span><span class="h4 fw-light">${nonBoldPrice.join('')}</span>`
      
-
-  //fine formElemento
+    lavoro.value=""
+    nameField.value =""
+    surnameField.value=""
+    emailField.value =""
+    promoElement.value = ""
 });
+
 
 //proviamo a dividere il risultato
 

@@ -40,22 +40,22 @@
             <h1>Richiesta Preventivo</h1>
             <p>Compila il form per richiedere un preventivo per i nostri servizi di sviluppo.</p>
             <!-- INIZIO FORM -->
-            <form action="#" method="post" id="form-preventivo"> 
-              <div class="mb3">
-                <label for="nome" class="form-label">Nome</label> 
+            <form action="#" method="post" id="form-preventivo" class=""> 
+              <div class="mb3 position-relative">
+                <label for="nome" class="form-label">Nome*</label> 
                 <input class="form-control form-control-lg" name="nome" id="nome" type="text" placeholder="" aria-label="preventivo-nome" required> 
               </div>
               <div class="mb-3">
-                <label for="cognome" class="form-label">Cognome</label> 
+                <label for="cognome" class="form-label">Cognome*</label> 
                 <input class="form-control form-control-lg" name="cognome" id="cognome" type="text" placeholder="" aria-label="preventivo-cognome" required> 
               </div>
               <div class="mb-3">
-                <label for="email" class="form-label">Email</label> 
+                <label for="email" class="form-label">Email*</label> 
                 <input class="form-control form-control-lg mb-3" name="email" id="email" type="email" placeholder="" aria-label="preventivo-email" required>   
               </div>
               <div class="mb-3">   
                 <label for="email" class="form-label">Tipo di lavoro</label>              
-                <select class="form-select form-select-lg mb-3" aria-label="selezione-lavoro" name="lavoro" id="lavoro" required>
+                <select class="form-select form-select-lg mb-3" aria-label="selezione-lavoro" name="lavoro" id="lavoro">
                   <option selected value="0">Seleziona il tipo di lavoro</option>
                   <option value="1">Backed Development</option>
                   <option value="2">Fronted Development</option>
@@ -63,16 +63,17 @@
                 </select>      
               </div>
               <div class="mb-3">
-                <label for="messaggio-preventivo" class="form-label">Textarea con Bootstrap 5</label> 
-                <textarea class="form-control" id="messaggio-preventivo" rows="3" name="messaggio-preventivo">Scrivi qui per cosa richiedi il preventivo
+                <label for="messaggio-preventivo" class="form-label">Scrivi qui per cosa richiedi il preventivo</label> 
+                <textarea class="form-control" id="messaggio-preventivo" rows="3" name="messaggio-preventivo">
                 </textarea>
               </div> 
               <div class="mb3">
                 <label for="promo-code" class="form-label">Codice promozionale (opzionale)</label> 
                 <input class="form-control form-control-lg" name="promo-code" id="promo-code" type="text" placeholder="" aria-label="preventivo-nome"> 
-              </div>
+                <p id="promo-validation" class=""></div>
+                </p>
               <div class="form-check py-3">
-                <input class="privacy-policy" type="checkbox" value="" id="privacy-policy" name="privacy-policy">
+                <input class="privacy-policy" type="checkbox" value="" id="privacy-policy" name="privacy-policy" required>
                 <label class="form-label" for="privacy-policy">
                   Accetto la Privacy Policy
                 </label>
