@@ -15,7 +15,7 @@ const coupon = ['YHDNU32', 'JANJC63', 'PWKCN25', 'SJDPO96', 'POCIE24'];
 //Collegare il form con l'evento submit evitando che la pagina si ricarchi
 formElement.addEventListener('submit', function(event){
     event.preventDefault();
-    //CALCOLARE IL PREZZO DEL PREVENTIVO
+    //CALCOLARE IL PREZZO DEL PREVENTIVO 
     //--costante lavoro e prezzo orario per tipo di lavoro
     const oreLavoro = 10;
     //--calcolare il prezzo base in base al tipo di lavoro
@@ -71,6 +71,8 @@ formElement.addEventListener('submit', function(event){
       
     }   
 
+
+
     const prezzoFinale = prezzoBase - sconto
     console.log(prezzoFinale, sconto)  
     
@@ -86,7 +88,7 @@ formElement.addEventListener('submit', function(event){
 });
 
 
-//proviamo a dividere il risultato
+
 
 
 
