@@ -15,6 +15,8 @@ const coupon = ['YHDNU32', 'JANJC63', 'PWKCN25', 'SJDPO96', 'POCIE24'];
 //Collegare il form con l'evento submit evitando che la pagina si ricarchi
 formElement.addEventListener('submit', function(event){
     event.preventDefault();
+    //VALIDARE CAMPO NOME
+    //VALIDARE CAMPO COGNOME
     //CALCOLARE IL PREZZO DEL PREVENTIVO 
     //--costante lavoro e prezzo orario per tipo di lavoro
     const oreLavoro = 10;
@@ -86,4 +88,18 @@ formElement.addEventListener('submit', function(event){
 });
 
 
+//FUNZIONI
 
+function validationNoDigit (text){
+  const numbersArray = ["0","1","2","3","4","5","6","7","8","9"]
+  const textDivided = text.split('')
+  for (let i = 0; i <= textDivided.length; i++)  {
+       if (numbersArray.includes(textDivided[i])) {
+          let digitNumber = true
+       } else {
+          let digitNumber = false
+       }
+         
+  }   
+   return digitNumber
+};
